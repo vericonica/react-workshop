@@ -1,9 +1,6 @@
 import React from 'react'
-import WaterCooler from './WaterCooler'
-
-//should take in individual components and decide what to show based on the passed in "place"
-//so bring in the individualized places 
-    //they can have components they share, but can also be individualized 
+import {WaterCooler} from '../index'
+import './DisplayComponent.css'
 
 class DisplayComponent extends React.Component { 
     constructor(props){ 
@@ -17,10 +14,10 @@ class DisplayComponent extends React.Component {
         console.log(this.state); 
         return ( 
             <div className={`${this.props.place}`}>
-                <img src={`${this.props.place}.jpg`}/>
+                <img alt={this.props.place} className='image' src={`/${this.props.place}.jpg`}/>
                 <p>{this.props.place}</p>
                 {this.props.place === 'water-cooler' ? 
-                <WaterCooler setValences={this.props.setValences} increase={this.props.increase}/>
+                <WaterCooler setNeeds={this.props.setNeeds} increase={this.props.increase}/>
                 : null}
 
             </div>

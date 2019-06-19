@@ -1,6 +1,6 @@
 import React from 'react'
-import NavButton from './components/NavButton/NavButton'
-import DisplayComponent from './components/DisplayComponent'
+import {NavButton} from './components'
+import {DisplayComponent} from './components'
 
 class Root extends React.Component { 
     constructor(props){ 
@@ -28,10 +28,9 @@ class Root extends React.Component {
         }
         this.buttonHandler = this.buttonHandler.bind(this); 
         this.increase = this.increase.bind(this); 
-        this.setValences = this.setValences.bind(this); 
+        this.setNeeds = this.setNeeds.bind(this); 
     }
-    setValences(arr){ 
-        console.log(arr); 
+    setNeeds(arr){ 
         let needs = this.state.needs; 
         needs.thirst += arr[0]; 
         needs.hunger += arr[1]; 
@@ -67,7 +66,7 @@ class Root extends React.Component {
                     <div>peace: {this.state.needs.peace}</div> 
                 </span>
                 <p>{this.state.time}</p>
-                <DisplayComponent place={this.state.place} increase={this.increase} setValences={this.setValences}/>
+                <DisplayComponent place={this.state.place} increase={this.increase} setNeeds={this.setNeeds}/>
             </div>
         )
     }

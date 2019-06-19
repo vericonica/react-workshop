@@ -21,7 +21,7 @@ class WaterCooler extends React.Component{
                 //stretch goal 3 --> change relationship based on similarity of interests and current relationship scores
         
         this.setState({lastAction: `You chatted with ${name} about ${topic}`})
-        this.props.setValences([-4, -2, -2, +10, -1, 0])
+        this.props.setNeeds([-4, -2, -2, +10, -1, 0])
 
     }
     complain(topic){ 
@@ -29,7 +29,7 @@ class WaterCooler extends React.Component{
     }
     emote(emoteArr, expression, target='', adverb=''){
         this.setState({lastAction: `You ${expression}ed ${adverb ? `${adverb}`: ''} ${ target ? `at ${target}` : ''}`})
-        this.props.setValences(emoteArr)
+        this.props.setNeeds(emoteArr)
        
     }
 
