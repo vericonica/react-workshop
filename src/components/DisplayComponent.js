@@ -12,18 +12,16 @@ class DisplayComponent extends React.Component {
             placeComponent: null
         }
     }
-    componentDidMount(){ 
-        // if (this.props.place === 'water cooler'){ 
-        //     this.setState({placeComponent: <WaterCooler/> })
-        // }
-    }
     render(){ 
+        console.log(this.props); 
+        console.log(this.state); 
         return ( 
             <div className={`${this.props.place}`}>
                 <img src={`${this.props.place}.jpg`}/>
                 <p>{this.props.place}</p>
-                {/* {this.state.placeComponent} */}
+                {this.props.place === 'water-cooler' ? 
                 <WaterCooler setValences={this.props.setValences} increase={this.props.increase}/>
+                : null}
 
             </div>
         )

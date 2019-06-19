@@ -20,10 +20,6 @@ class WaterCooler extends React.Component{
             //stretch goal 2 --> change relationship as a % increase of existing relationship 
                 //stretch goal 3 --> change relationship based on similarity of interests and current relationship scores
         
-        //big Q --> where to store the different relationships? 
-            //we don't really need react components 
-            //probably vanila JS file which starts with initial json data 
-        
         this.setState({lastAction: `You chatted with ${name} about ${topic}`})
         this.props.setValences([-4, -2, -2, +10, -1, 0])
 
