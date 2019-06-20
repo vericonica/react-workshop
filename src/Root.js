@@ -15,7 +15,8 @@ class Root extends React.Component {
                 'daycare', 
                 'pet store', 
                 'beauty parlor', 
-                'library'
+                'library', 
+                'beach'
             ], 
             needs: {
                 thirst: 25,
@@ -24,11 +25,20 @@ class Root extends React.Component {
                 excitement: 25, 
                 depression: 25, 
                 peace: 25 
+            }, 
+            friends: { 
+                Steve: 15, 
+                Suzy: 22
             }
         }
         this.buttonHandler = this.buttonHandler.bind(this); 
         this.increase = this.increase.bind(this); 
         this.setNeeds = this.setNeeds.bind(this); 
+        this.increaseRelationship = this.increaseRelationship.bind(this); 
+    }
+    increaseRelationship(name, num){ 
+        let friends = this.state.friends; 
+        friends[name]+=num; 
     }
     setNeeds(arr){ 
         let needs = this.state.needs; 
@@ -65,8 +75,12 @@ class Root extends React.Component {
                     <div>depression: {this.state.needs.depression}</div> 
                     <div>peace: {this.state.needs.peace}</div> 
                 </span>
-                <p>{this.state.time}</p>
-                <DisplayComponent place={this.state.place} increase={this.increase} setNeeds={this.setNeeds}/>
+                <span>
+                    <div>Steve : {this.state.friends.Steve} </div>
+                    <div>Suzy : {this.state.friends.Suzy} </div>
+                </span>
+        
+                <DisplayComponent increaseRelationship={this.increaseRelationship} place={this.state.place} increase={this.increase} setNeeds={this.setNeeds}/>
             </div>
         )
     }

@@ -21,6 +21,7 @@ class WaterCooler extends React.Component{
                 //stretch goal 3 --> change relationship based on similarity of interests and current relationship scores
         
         this.setState({lastAction: `You chatted with ${name} about ${topic}`})
+        this.props.increaseRelationship(name, 5); 
         this.props.setNeeds([-4, -2, -2, +10, -1, 0])
 
     }

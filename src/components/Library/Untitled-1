@@ -1,0 +1,8 @@
+1. go to https://github.com/vburnz/react-workshop
+2. download the repository (click the clone or download button)
+3. open in your fave code editor
+4. in your command terminal 
+    - run `npm install`
+    - run `npm run start`
+5. navigate to localhost:3000 in your browser
+6. explore, ask questions, and build out the app!

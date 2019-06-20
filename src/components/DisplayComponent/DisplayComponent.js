@@ -1,6 +1,8 @@
 import React from 'react'
 import {WaterCooler} from '../index'
 import './DisplayComponent.css'
+import Beach from '../Beach/Beach'
+import Library from '../Library/Library'
 
 class DisplayComponent extends React.Component { 
     constructor(props){ 
@@ -17,9 +19,12 @@ class DisplayComponent extends React.Component {
                 <img alt={this.props.place} className='image' src={`/${this.props.place}.jpg`}/>
                 <p>{this.props.place}</p>
                 {this.props.place === 'water-cooler' ? 
-                <WaterCooler setNeeds={this.props.setNeeds} increase={this.props.increase}/>
+                <WaterCooler increaseRelationship={this.props.increaseRelationship} setNeeds={this.props.setNeeds} increase={this.props.increase}/>
                 : null}
 
+
+                {this.props.place === 'beach' ? <Beach setNeeds={this.props.setNeeds}/> : null   }
+                {this.props.place === 'library' ? <Library otherStuff={'otherStuff'} setNeeds={this.props.setNeeds}/> : null}
             </div>
         )
     }
